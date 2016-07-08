@@ -296,7 +296,7 @@ function parse (pattern, isSub) {
       // that wasn't consumed by this pass.
       switch (stateChar) {
         case '*':
-          re += star
+          re += options.captureStar ? '(' + star + ')' : star
           hasMagic = true
         break
         case '?':
